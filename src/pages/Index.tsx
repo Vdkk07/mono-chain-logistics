@@ -4,8 +4,10 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Shield, Package, CreditCard, Leaf, ArrowRight, Menu, X } from "lucide-react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Index = () => {
+  const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const features = [
@@ -111,7 +113,11 @@ const Index = () => {
                 and immutable tracking records. Built for the future of logistics.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="text-lg px-8 py-6 rounded-2xl">
+                <Button 
+                  size="lg" 
+                  className="text-lg px-8 py-6 rounded-2xl"
+                  onClick={() => navigate('/dashboard')}
+                >
                   Start Tracking
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
@@ -172,7 +178,11 @@ const Index = () => {
               Join hundreds of logistics companies already using LogiChain to build 
               trust, reduce costs, and ensure transparency in their operations.
             </p>
-            <Button size="lg" className="text-lg px-12 py-6 rounded-2xl">
+            <Button 
+              size="lg" 
+              className="text-lg px-12 py-6 rounded-2xl"
+              onClick={() => navigate('/dashboard')}
+            >
               Get Started Today
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
